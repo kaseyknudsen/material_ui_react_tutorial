@@ -3,14 +3,38 @@ import "./App.css";
 import Button from "@mui/material/Button";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import SendIcon from "@mui/icons-material/Send";
-import { ButtonGroup } from "@mui/material";
+import {
+  ButtonGroup,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import ElectricScooterIcon from "@mui/icons-material/ElectricScooter";
-import { Checkbox } from "@mui/material";
+
 import { useState } from "react";
-import FormControl from "@mui/material/FormControl";
-import { FormControlLabel } from "@mui/material";
-import { TextField } from "@mui/material";
+
+// -import makeStyles from '@material-ui/styles/makeStyles';
+// +import { makeStyles } from 'tss-react/mui';
+
+//custom styles
+// const useStyles = styled({
+//   root: {
+//     background: "linear-gradient(45deg, #333, #999)",
+//     border: 0,
+//     marginBottom: 15,
+//     borderRadius: 15,
+//     color: "white",
+//     padding: "0 30px",
+//   },
+// });
+
+// function ButtonStyled() {
+//   const classes = useStyles()
+//   return <Button className={classes.root}>Test Styled Button</Button>
+// }
 
 function CheckBoxExample() {
   const [checked, setChecked] = useState(true);
@@ -36,14 +60,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TextField 
-        variant="outlined"
-        color="secondary"
-        // type="date"
-        // type="time"
-        type="email"
-        placeholder="kasey@kasey.com"
-       
+        {/* <ButtonStyled /> */}
+        <TextField
+          variant="outlined"
+          color="secondary"
+          // type="date"
+          // type="time"
+          type="email"
+          placeholder="kasey@kasey.com"
         />
         <CheckBoxExample />
         <Button
@@ -62,13 +86,16 @@ function App() {
         >
           Hello World
         </Button>
-        <ButtonGroup size="large" variant="contained">
-          <Button startIcon={<SaveAltIcon />}>Save</Button>
-          <Button startIcon={<SendIcon />}>End</Button>
-          <Button startIcon={<AudiotrackIcon />}>Music</Button>
-          <Button startIcon={<ElectricScooterIcon />}>Scooter</Button>
+        <ButtonGroup size="large" variant="contained" >
+          {/* number in the sx prop is multiplied by the default spacing of the theme (4px) */}
+          {/* look up mui.com/system/properties/ for property shortcuts */}
+          <Button startIcon={<SaveAltIcon />} color="primary" sx={{m: 2, p: 2}}>Save</Button>
+          <Button startIcon={<SendIcon />} color="secondary">End</Button>
+          <Button startIcon={<AudiotrackIcon />} color="success">Music</Button>
+          <Button startIcon={<ElectricScooterIcon />} color="info">Scooter</Button>
         </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <Typography variant="myVariant" style={{marginTop: 20}}>Hello and welcome to Typography</Typography>
       </header>
     </div>
   );
