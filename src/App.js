@@ -60,6 +60,19 @@ function CheckBoxExample() {
 
 function App() {
   const [buttonText, setButtonText] = useState("Click Me");
+  const [card, setCard] = useState("")
+
+  const handleClick = () => {
+    setButtonText("Hello")
+    setCard(() => {
+      return (
+        <Card sx={{p: 10}}>
+          <CardContent>{'I clicked'}</CardContent>
+        </Card>
+      )
+    })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -113,10 +126,11 @@ function App() {
           variant="contained"
           sx={{ m: 5 }}
           size="large"
-          onClick={() => setButtonText("Hello")}
+          onClick={() => handleClick()}
         >
           {buttonText}
         </Button>
+        <div>{card}</div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Typography variant="myVariant" style={{ marginTop: 20 }}>
           Hello and welcome to Typography
