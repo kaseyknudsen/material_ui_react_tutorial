@@ -13,8 +13,9 @@ import {
 } from "@mui/material";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import ElectricScooterIcon from "@mui/icons-material/ElectricScooter";
-
+import { styled } from "@mui/material/styles";
 import { useState } from "react";
+import GridPage from "./grid";
 
 // -import makeStyles from '@material-ui/styles/makeStyles';
 // +import { makeStyles } from 'tss-react/mui';
@@ -56,7 +57,12 @@ function CheckBoxExample() {
   );
 }
 
+const myCustomButton = styled(Button)({
+  padding: 40
+})
+
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -86,16 +92,36 @@ function App() {
         >
           Hello World
         </Button>
-        <ButtonGroup size="large" variant="contained" >
+        <ButtonGroup size="large" variant="contained">
           {/* number in the sx prop is multiplied by the default spacing of the theme (4px) */}
           {/* look up mui.com/system/properties/ for property shortcuts */}
-          <Button startIcon={<SaveAltIcon />} color="primary" sx={{m: 2, p: 2}}>Save</Button>
-          <Button startIcon={<SendIcon />} color="secondary">End</Button>
-          <Button startIcon={<AudiotrackIcon />} color="success">Music</Button>
-          <Button startIcon={<ElectricScooterIcon />} color="info">Scooter</Button>
+          <Button
+            startIcon={<SaveAltIcon />}
+            color="primary"
+            sx={{ m: 2, p: 2 }}
+          >
+            Save
+          </Button>
+          <Button startIcon={<SendIcon />} color="secondary">
+            End
+          </Button>
+          <Button startIcon={<AudiotrackIcon />} color="success">
+            Music
+          </Button>
+          <Button startIcon={<ElectricScooterIcon />} color="info">
+            Scooter
+          </Button>
         </ButtonGroup>
+        <myCustomButton>My custom button</myCustomButton>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Typography variant="myVariant" style={{marginTop: 20}}>Hello and welcome to Typography</Typography>
+        <Typography
+          sx={{ color: "myCustomColor.main" }}
+          variant="myVariant"
+          style={{ marginTop: 20 }}
+        >
+          Hello and welcome to Typography
+        </Typography>
+        <GridPage />
       </header>
     </div>
   );

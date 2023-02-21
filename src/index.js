@@ -14,6 +14,11 @@ const theme = createTheme({
     },
     secondary: {
       main: "#cddc39"
+    },
+    myCustomColor: {
+      main:'#44bcd8',
+      superDark: '#195e83',
+      superLight:'#cce7e8',
     }
   },
   typography: {
