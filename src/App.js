@@ -59,7 +59,7 @@ function CheckBoxExample() {
 }
 
 function App() {
-  const [card, setCard] = useState("");
+  const [buttonText, setButtonText] = useState("Click Me");
   return (
     <div className="App">
       <header className="App-header">
@@ -113,9 +113,9 @@ function App() {
           variant="contained"
           sx={{ m: 5 }}
           size="large"
-          onClick={() => setCard("Hello")}
+          onClick={() => setButtonText("Hello")}
         >
-          {card}
+          {buttonText}
         </Button>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Typography variant="myVariant" style={{ marginTop: 20 }}>
