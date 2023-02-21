@@ -60,18 +60,23 @@ function CheckBoxExample() {
 
 function App() {
   const [buttonText, setButtonText] = useState("Click Me");
-  const [card, setCard] = useState("")
+  const [buttonText2, setButtonText2] = useState("Click to Clear Card");
+  const [card, setCard] = useState("");
 
   const handleClick = () => {
-    setButtonText("Hello")
+    setButtonText("Check out the card below!");
     setCard(() => {
       return (
-        <Card sx={{p: 10}}>
-          <CardContent>{'I clicked'}</CardContent>
+        <Card sx={{ p: 10 }}>
+          <CardContent>{"I clicked"}</CardContent>
         </Card>
-      )
-    })
-  }
+      );
+    });
+  };
+
+  const handleClear = () => {
+    setCard(null);
+  };
 
   return (
     <div className="App">
@@ -122,14 +127,24 @@ function App() {
             Scooter
           </Button>
         </ButtonGroup>
-        <Button
-          variant="contained"
-          sx={{ m: 5 }}
-          size="large"
-          onClick={() => handleClick()}
-        >
-          {buttonText}
-        </Button>
+        <ButtonGroup>
+          <Button
+            variant="contained"
+            sx={{ m: 5 }}
+            size="large"
+            onClick={() => handleClick()}
+          >
+            {buttonText}
+          </Button>
+          <Button
+            variant="contained"
+            sx={{ m: 5 }}
+            size="large"
+            onClick={() => handleClear()}
+          >
+            {buttonText2}
+          </Button>
+        </ButtonGroup>
         <div>{card}</div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Typography variant="myVariant" style={{ marginTop: 20 }}>
