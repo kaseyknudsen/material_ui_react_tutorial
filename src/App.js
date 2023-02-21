@@ -76,6 +76,7 @@ function App() {
 
   const handleClear = () => {
     setCard(null);
+    setButtonText("Click me!")
   };
 
   return (
