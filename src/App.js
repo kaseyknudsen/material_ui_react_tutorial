@@ -64,6 +64,25 @@ const myCustomButton = styled(Button)({
 })
 
 function App() {
+  const [button1Text, setButton1Text] = useState("Click to see a card")
+  const [button2Text, setButton2Text] = useState("Click to clear card")
+  const [card, setCard] = useState("")
+
+  const handleButtonClick1 = () => {
+    setButton1Text("")
+     setCard(() => {
+      return (
+        <Card>
+          <CardContent>I am a card!</CardContent>
+        </Card>
+      )
+     })
+  }
+
+  const handleButtonClick2 = () => {
+    setCard(null)
+    setButton1Text("Click to see a card")
+  } 
   return (
     <div className="App">
       <header className="App-header">
@@ -103,6 +122,11 @@ function App() {
         </ButtonGroup>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Typography variant="myVariant" style={{marginTop: 20}}>Hello and welcome to Typography</Typography>
+        <ButtonGroup size="large" variant="contained" >
+          <Button sx={{mr: 5}} onClick={() => handleButtonClick1()}>{button1Text}</Button>
+          <Button onClick={() => handleButtonClick2()}>{button2Text}</Button>
+        </ButtonGroup>
+        <div style={{marginTop:'20px'}}>{card}</div>
       </header>
     </div>
   );
