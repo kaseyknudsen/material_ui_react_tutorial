@@ -10,6 +10,8 @@ import {
   FormControlLabel,
   TextField,
   Typography,
+  Card,
+  CardContent,
 } from "@mui/material";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import ElectricScooterIcon from "@mui/icons-material/ElectricScooter";
@@ -62,7 +64,6 @@ const myCustomButton = styled(Button)({
 })
 
 function App() {
-  
   return (
     <div className="App">
       <header className="App-header">
@@ -95,33 +96,13 @@ function App() {
         <ButtonGroup size="large" variant="contained">
           {/* number in the sx prop is multiplied by the default spacing of the theme (4px) */}
           {/* look up mui.com/system/properties/ for property shortcuts */}
-          <Button
-            startIcon={<SaveAltIcon />}
-            color="primary"
-            sx={{ m: 2, p: 2 }}
-          >
-            Save
-          </Button>
-          <Button startIcon={<SendIcon />} color="secondary">
-            End
-          </Button>
-          <Button startIcon={<AudiotrackIcon />} color="success">
-            Music
-          </Button>
-          <Button startIcon={<ElectricScooterIcon />} color="info">
-            Scooter
-          </Button>
+          <Button startIcon={<SaveAltIcon />} color="primary" sx={{m: 2, p: 2}}>Save</Button>
+          <Button startIcon={<SendIcon />} color="secondary">End</Button>
+          <Button startIcon={<AudiotrackIcon />} color="success">Music</Button>
+          <Button startIcon={<ElectricScooterIcon />} color="info">Scooter</Button>
         </ButtonGroup>
-        <myCustomButton>My custom button</myCustomButton>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Typography
-          sx={{ color: "myCustomColor.main" }}
-          variant="myVariant"
-          style={{ marginTop: 20 }}
-        >
-          Hello and welcome to Typography
-        </Typography>
-        <GridPage />
+        <Typography variant="myVariant" style={{marginTop: 20}}>Hello and welcome to Typography</Typography>
       </header>
     </div>
   );
